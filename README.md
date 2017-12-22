@@ -23,7 +23,7 @@ It also adds a user customizable name to each calendar. So, yes you cannot say "
 
 3) Go to [apps script page](https://script.google.com/intro). **Make sure you are logged in with your G Suite account.**
 
-4) Copy the contents of [google_home_mutiple_calendars.txt](google_home_mutiple_calendars.txt)  and paste them over in the editor shown. 
+4) Copy the contents of [google_home_mutiple_calendars.js](google_home_mutiple_calendars.js)  and paste them over in the editor shown. 
 
 
 ![Example screenshot](img/2017-09-02-15-38-11.png)
