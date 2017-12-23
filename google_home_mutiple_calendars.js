@@ -13,25 +13,25 @@ function addToGoogleHome() {
 
     for (var i in calendarsWithName) {
         var calendarToCopy = CalendarApp.getCalendarById(calendarsWithName[i]);
-        var name = i;
+        var name = i + " ";
         if (Object.keys(calendarsWithName).length === 1) {
             name = "";
         }
         //loop through next 7 days
         for (var day = 1; day <= 7; day++) {
-            currentDate.setDate(currentDate.getDate() + 1);
             var oldEvents = googleHomeCalendar.getEventsForDay(currentDate);
             var events = calendarToCopy.getEventsForDay(currentDate);
           
             //delete old events first
             for (var j in oldEvents) { 
-              oldEvents[j].deleteEvent();
+                oldEvents[j].deleteEvent();
             }
             //add new events
-            for (var k = 0; k < events.length; k++) { 
-              googleHomeCalendar.createEvent(name + " " + events[k].getTitle(), events[k].getStartTime(), events[k].getEndTime(), {description: events[k].getDescription()});
+            for (var k in events) {
+                googleHomeCalendar.createEvent(name + events[k].getTitle(), events[k].getStartTime(), events[k].getEndTime(), {description: events[k].getDescription()});
             }
             num_events = num_events + events.length;
+            currentDate.setDate(currentDate.getDate() + 1);
         }
     }
 
